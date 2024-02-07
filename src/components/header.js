@@ -1,8 +1,14 @@
 import PropTypes from 'prop-types';
 import { Fragment } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faImagePortrait } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCube,
+  faFileText,
+  faHeart,
+  faImagePortrait
+} from '@fortawesome/free-solid-svg-icons';
+
+import NavLink from 'components/navLink';
 
 export default function Header({ siteTitle }) {
   return (
@@ -15,9 +21,15 @@ export default function Header({ siteTitle }) {
           <Navbar.Toggle />
           <Navbar.Collapse>
             <Nav>
-              <Nav.Link>
-                <FontAwesomeIcon icon={faImagePortrait} /> Gallery
-              </Nav.Link>
+              <NavLink to="/story" icon={faFileText} label="Her Story" />
+              <NavLink to="/images" icon={faImagePortrait} label="Images" />
+              <NavLink to="/3d" icon={faCube} label="3D View" />
+              <NavLink
+                external
+                to="https://bfp.org/"
+                icon={faHeart}
+                label="Contribute"
+              />
             </Nav>
           </Navbar.Collapse>
         </Container>
