@@ -1,0 +1,15 @@
+// Imported styles
+@import '~bootswatch/dist/slate/variables';
+@import '~bootstrap/scss/bootstrap';
+@import '~bootswatch/dist/slate/bootswatch';
+
+// Fix for carousel button alignment
+// .carousel {
+//   &-control-prev {
+//     left: -20px;
+//   }
+
+//   &-control-next {
+//     right: -20px;
+//   }
+// }
