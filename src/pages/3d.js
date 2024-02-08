@@ -41,6 +41,14 @@ const BeagleViewer = () => {
 };
 
 export default function ThreeDPage() {
+  if (typeof window === 'undefined') {
+    return (
+      <Layout title="3D View">
+        <h1>3D Beagle Viewer</h1>
+      </Layout>
+    );
+  }
+
   return (
     <Layout title="3D View">
       <Container fluid className="h-100">
