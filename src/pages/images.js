@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import { compareAsc, parseISO } from 'date-fns';
 import { Container, Row, Col } from 'react-bootstrap';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImagePortrait } from '@fortawesome/free-solid-svg-icons';
-import { compareAsc, parseISO } from 'date-fns';
 
 import Layout from 'components/layout';
 

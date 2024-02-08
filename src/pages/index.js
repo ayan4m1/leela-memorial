@@ -1,5 +1,6 @@
-import Layout from 'components/layout';
 import { Container } from 'react-bootstrap';
+
+import Layout from 'components/layout';
 
 export default function IndexPage() {
   return (
