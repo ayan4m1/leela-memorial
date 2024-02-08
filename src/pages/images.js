@@ -1,9 +1,11 @@
 import { useMemo } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import { compareAsc, parseISO } from 'date-fns';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faImagePortrait } from '@fortawesome/free-solid-svg-icons';
+import { compareAsc, parseISO } from 'date-fns';
 
 import Layout from 'components/layout';
 
@@ -12,7 +14,9 @@ export default function ImagesPage({ data }) {
     const newData = data.allImageSharp.nodes.map((node) => ({
       id: node.id,
       date: node.fields.exif.meta.dateTaken ?? '1970-01-01T00:00:00',
-      image: getImage(node)
+      image: getImage(node),
+      height: node.gatsbyImageData.height,
+      width: node.gatsbyImageData.width
     }));
 
     newData.sort((a, b) => compareAsc(parseISO(a.date), parseISO(b.date)));
@@ -20,16 +24,42 @@ export default function ImagesPage({ data }) {
     return newData;
   }, [data]);
 
+  // const firstImageDate = imageData[0].date;
+  // const lastImageData = imageData[imageData.length - 1].date;
+
+  // const monthSpan = differenceInMonths(
+  //   parseISO(lastImageData),
+  //   parseISO(firstImageDate)
+  // );
+
   return (
     <Layout title="Images">
       <Container>
-        <h1>Images</h1>
+        <Row className="mb-2">
+          <Col>
+            <h1>
+              <FontAwesomeIcon icon={faImagePortrait} size="2x" fixedWidth />{' '}
+              Images
+            </h1>
+          </Col>
+        </Row>
         <Row>
-          {imageData.map(({ id, image }) => (
-            <Col xs={2} key={id} className="m-1">
-              <GatsbyImage image={image} alt="Beagle" />
-            </Col>
-          ))}
+          <Col
+            className="d-flex flex-wrap"
+            style={{ justifyContent: 'space-evenly' }}
+          >
+            {imageData.map(({ id, image, height, width }) => (
+              <GatsbyImage
+                key={id}
+                image={image}
+                alt="Beagle"
+                style={{
+                  height,
+                  width
+                }}
+              />
+            ))}
+          </Col>
         </Row>
       </Container>
     </Layout>
@@ -45,11 +75,7 @@ export const pageQuery = graphql`
     allImageSharp {
       nodes {
         id
-        gatsbyImageData(
-          layout: CONSTRAINED
-          placeholder: BLURRED
-          formats: [WEBP]
-        )
+        gatsbyImageData(height: 200)
         fields {
           exif {
             meta {
