@@ -11,7 +11,13 @@ export default function Loader() {
         style={{ textShadow: '5px 4px 4px #262323' }}
       >
         <p>Loading&hellip;</p>
-        <ProgressBar now={progress} max={100} min={0} className="my-4" />
+        <ProgressBar
+          now={progress}
+          max={100}
+          min={0}
+          className="my-4"
+          variant="success"
+        />
       </h1>
     </div>
   );

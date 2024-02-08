@@ -1,7 +1,13 @@
 import { Suspense } from 'react';
-import { Container } from 'react-bootstrap';
-import { OrbitControls, useGLTF } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
+import { Container } from 'react-bootstrap';
+import {
+  OrbitControls,
+  PerspectiveCamera,
+  Stage,
+  useGLTF
+} from '@react-three/drei';
+import { EffectComposer, N8AO } from '@react-three/postprocessing';
 
 import Layout from 'components/layout';
 import Loader from 'components/loader';
@@ -10,11 +16,26 @@ const BeagleViewer = () => {
   const { scene } = useGLTF('../beagle.glb');
 
   return (
-    <Canvas style={{ height: '100vh' }} gl={{ antialias: false }} dpr={1.5}>
-      <ambientLight />
+    <Canvas style={{ height: '100%' }} gl={{ antialias: false }}>
       {/* eslint-disable-next-line react/no-unknown-property */}
-      <primitive object={scene} />
-      <OrbitControls makeDefault />
+      <color attach="background" args={['rgb(39, 43, 48)']} />
+      <Stage
+        environment={{ ground: false, preset: 'apartment' }}
+        adjustCamera={0.75}
+      >
+        {/* eslint-disable-next-line react/no-unknown-property */}
+        <primitive object={scene} />
+      </Stage>
+      <PerspectiveCamera makeDefault />
+      <OrbitControls
+        makeDefault
+        maxPolarAngle={Math.PI / 2 - Math.PI / 16}
+        minDistance={1}
+        maxDistance={3}
+      />
+      <EffectComposer disableNormalPass>
+        <N8AO aoRadius={0.25} intensity={2} />
+      </EffectComposer>
     </Canvas>
   );
 };
@@ -22,8 +43,7 @@ const BeagleViewer = () => {
 export default function ThreeDPage() {
   return (
     <Layout title="3D View">
-      <Container>
-        <h1>3D Beagle Viewer</h1>
+      <Container fluid className="h-100">
         <Suspense fallback={<Loader />}>
           <BeagleViewer />
         </Suspense>
