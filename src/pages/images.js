@@ -33,7 +33,7 @@ export default function ImagesPage({ data }) {
   // );
 
   return (
-    <Layout title="Images">
+    <Layout title="Images" description="Gallery of beagle images.">
       <Container>
         <Row className="mb-2">
           <Col>
