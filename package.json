@@ -21,13 +21,13 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@babel/core": "^7.24.3",
-    "@fortawesome/fontawesome-svg-core": "^6.5.1",
-    "@fortawesome/free-brands-svg-icons": "^6.5.1",
-    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@babel/core": "^7.24.4",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@react-three/drei": "^9.102.6",
-    "@react-three/fiber": "^8.15.19",
+    "@react-three/drei": "^9.105.2",
+    "@react-three/fiber": "^8.16.1",
     "@react-three/postprocessing": "^2.16.2",
     "bootstrap": "^5.3.3",
     "bootswatch": "^5.3.3",
@@ -52,13 +52,13 @@
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "sass": "^1.72.0",
+    "sass": "^1.74.1",
     "sharp": "^0.33.3",
     "three": "^0.161.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.24.1",
-    "@babel/preset-env": "^7.24.3",
+    "@babel/preset-env": "^7.24.4",
     "@babel/preset-react": "^7.24.1",
     "deepmerge": "^4.3.1",
     "eslint": "^8.57.0",
@@ -75,7 +75,7 @@
     "postcss": "^8.4.38",
     "postcss-scss": "^4.0.9",
     "prettier": "^3.2.5",
-    "stylelint": "^16.2.1",
+    "stylelint": "^16.3.1",
     "stylelint-config-recommended": "^14.0.0"
   }
 }
