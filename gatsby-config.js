@@ -30,7 +30,13 @@ module.exports = {
         icon: 'src/images/gatsby-icon.png'
       }
     },
-    'gatsby-plugin-eslint',
+    {
+      resolve: 'gatsby-plugin-eslint',
+      options: {
+        configType: 'flat',
+        eslintPath: 'eslint/use-at-your-own-risk'
+      }
+    },
     'gatsby-plugin-image',
     'gatsby-plugin-sass',
     'gatsby-plugin-sharp',
