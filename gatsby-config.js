@@ -33,12 +33,18 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-eslint',
       options: {
-        configType: 'flat',
-        eslintPath: 'eslint/use-at-your-own-risk'
+        configType: 'flat'
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        sassOptions: {
+          quietDeps: true
+        }
       }
     },
     'gatsby-plugin-image',
-    'gatsby-plugin-sass',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sharp-exif',
     'gatsby-plugin-react-helmet',
