@@ -55,7 +55,11 @@ export default function ImagesPage({ data }) {
                 alt="Beagle"
                 style={{
                   height,
-                  width
+                  width,
+                  border: '1px solid #666',
+                  boxShadow: '2px 2px 1px 0px rgba(210,210,210,0.4)',
+                  marginBottom: '8px',
+                  borderRadius: '8px'
                 }}
               />
             ))}
