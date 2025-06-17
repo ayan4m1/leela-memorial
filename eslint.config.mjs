@@ -29,7 +29,13 @@ export default [
       ...reactPlugin.configs.recommended.rules,
       ...reactHooksPlugin.configs.recommended.rules,
       'react/jsx-uses-react': 0,
-      'react/react-in-jsx-scope': 0
+      'react/react-in-jsx-scope': 0,
+      'import-x/no-unresolved': [
+        'error',
+        {
+          caseSensitive: false
+        }
+      ]
     },
     settings: {
       react: {
