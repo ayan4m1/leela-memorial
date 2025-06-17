@@ -1,9 +1,9 @@
-import { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import Header from 'components/header';
+import ModalContextProvider from 'components/modalContext';
 
 export default function Layout({
   title,
@@ -27,7 +27,7 @@ export default function Layout({
   const metaDescription = description || site.siteMetadata.description;
 
   return (
-    <Fragment>
+    <ModalContextProvider>
       <Helmet
         htmlAttributes={{
           lang
@@ -55,7 +55,7 @@ export default function Layout({
       />
       <Header siteTitle={site.siteMetadata.title} />
       <main className="mt-3 mb-2">{children}</main>
-    </Fragment>
+    </ModalContextProvider>
   );
 }
 
