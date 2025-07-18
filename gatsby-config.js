@@ -47,7 +47,6 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sharp-exif',
-    'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     '@ayan4m1/gatsby-plugin-root-import'
   ]
