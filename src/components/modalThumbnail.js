@@ -12,7 +12,7 @@ export default function ModalThumbnail({ image, thumbnail, height, width }) {
   }, [image, show]);
 
   return (
-    <div style={{ height, width }} onClick={openModal}>
+    <div className="my-2" style={{ height, width }} onClick={openModal}>
       <GatsbyImage
         image={thumbnail}
         alt="Leela"
