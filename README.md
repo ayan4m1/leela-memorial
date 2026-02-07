@@ -1,15 +1,9 @@
-# Personal Blog
+# Leela Memorial
 
-This is my personal blog, rendered using Gatsby and served by GitHub Pages.
+This is a memorial site for my beagle, Leela.
 
 ## Features
 
-- Dynamic article rendering with category lists
-- Supports Markdown or MDX for articles
-- Project and Favorite Tool Lists
-- Games
-  - Sudoku
-  - Mahjong Solitaire
-  - Coloree (Color Matching)
-- Utilities
-  - BOM Sheet Maker (PCB Assembly)
+- Image gallery
+- 3D scan
+- Donate to [BFP](https://bfp.org/)
