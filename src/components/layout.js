@@ -21,15 +21,13 @@ export default function Layout({ title, description = '', children }) {
 
   return (
     <ModalContextProvider>
-      <head>
-        <title>
-          {title} | {site.siteMetadata.title}
-        </title>
-        <meta name="description" content={metaDescription} />
-        <meta name="og:title" content={title} />
-        <meta name="og:description" content={metaDescription} />
-        <meta name="og:type" content="website" />
-      </head>
+      <title>
+        {title} | {site.siteMetadata.title}
+      </title>
+      <meta name="description" content={metaDescription} />
+      <meta name="og:title" content={title} />
+      <meta name="og:description" content={metaDescription} />
+      <meta name="og:type" content="website" />
       <Header siteTitle={site.siteMetadata.title} />
       <main className="mt-3 mb-2">{children}</main>
     </ModalContextProvider>
