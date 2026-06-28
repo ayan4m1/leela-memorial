@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@ayan4m1/gatsby-plugin-root-import": "^2.0.10",
-    "@babel/core": "^7.29.0",
+    "@babel/core": "^7.29.6",
     "@fortawesome/fontawesome-svg-core": "^7.2.0",
     "@fortawesome/free-brands-svg-icons": "^7.2.0",
     "@fortawesome/free-solid-svg-icons": "^7.2.0",
