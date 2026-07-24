@@ -52,7 +52,7 @@
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.2.5",
     "sass": "^1.99.0",
-    "sharp": "^0.34.5",
+    "sharp": "^0.35.0",
     "three": "^0.171.0"
   },
   "devDependencies": {
